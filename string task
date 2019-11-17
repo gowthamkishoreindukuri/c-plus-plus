@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+ 
+int main() {
+    int len,i;
+	string inp;
+	cin >> inp;
+	len = inp.length();
+	i = 0;
+	while(i != len){
+	    if (inp[i] == 97 || inp[i] == 101 || inp[i] == 105 || inp[i] == 111 || inp[i] == 117 || inp[i] == 65 || inp[i] ==69|| inp[i] == 73 || inp[i] ==79|| inp[i] == 85|| inp[i] == 121|| inp[i] == 89 ){
+	        i = i + 1;
+	    }
+	    else{
+	        cout << ".";
+	        if (inp[i] >= 65 && inp[i] <= 90){
+	            inp[i] = inp[i] + 32;
+	            cout << inp[i];
+	        }
+	        else{
+	            cout << inp[i];
+	        }
+	        i = i + 1;
+	    }
+	}
+	return 0;
+}
