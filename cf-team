@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+    int n,a,b,c,ans;
+    cin >> n;
+    ans = 0;
+    while (n > 0){
+        cin >> a >> b >> c;
+        if (a+b+c >= 2){
+            ans = ans + 1;
+        }
+        n = n - 1;
+    }
+    cout << ans;
+	return 0;
+}
