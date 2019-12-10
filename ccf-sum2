@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n,t,s=0,f;
+    cin >> n;
+    int k[n];
+    for(int i=0;i<n;i++)
+    {
+        cin >> t;
+        while(t>0)
+        {
+            f=t%10;
+            s=s+f;
+            t=t/10;
+        }
+        k[i]=s;
+        s=0;
+    }
+    for(int j=0;j<n;j++)
+    {
+        cout << k[j] << endl;
+    }
+
+	return 0;
+}
