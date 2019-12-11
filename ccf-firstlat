@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m;
+    cin >>m;
+    int c[m];
+ for(int k=0;k<m;k++)
+    {
+   int n,s,f,l;
+   cin >> n;
+   l=n%10;
+   f=n;
+     while(f >= 10)
+    {
+        f = f / 10;
+    }
+    c[k]=l+f;
+    }
+    for(int i=0;i<m;i++)
+    {
+        cout << c[i] << endl;
+    }
+	return 0;
+}
