@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int m;
+    cin >> m;
+    int n,r,o[m];
+    for(int i=0;i<m;i++)
+    {
+    cin >> n >>r;
+    o[i]=n%r;
+    }
+    for(int j=0;j<m;j++)
+    {
+        cout << o[j] << endl;
+    }
+}
