@@ -2,25 +2,32 @@
 using namespace std;
 int main()
 {
-    int n,v=0;
+    int n;
     cin >>n;
-    int a[n],b[n],c[n];
-    for(int i=0;i<n;i++)
+    int a[n],b[n],ii=0,jj=0,c[n-1];
+    for(int i=0;i<(2*n);i++)
     {
-        cin >> a[i] >>b[i];
+        if(i%2==0)
+        {
+            cin>>a[ii];
+            ii++;
+        }
+        else
+        {
+            cin>>b[jj];
+            jj++;
+        }
     }
-    for(int j=0;j<n-1;j++)
+    ii=0;
+    jj=1;
+    c[0]=b[0];
+    for(int k=1;k<n-1;k++)
     {
-      if(a[j+1]<b[j])
-      {
-          v=v-a[j+1]+b[j];
-      }
-      else
-      {
-          v=v+a[j+1]-b[j];
-      }
-      c[j]=v;
+      c[k]=(b[ii]>a[jj]?(b[ii]-a[jj]):a[jj]-b[ii])+b[ii+1];
+      b[ii+1]=c[k];
+      ii++;
+      jj++;
     }
     sort(c,c+n-1);
-    cout << c[n-2] << endl;
+    cout<<c[n-2]<<endl;
 }
