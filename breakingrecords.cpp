@@ -4,23 +4,26 @@ int main()
 {
     int n;
     cin>>n;
-    int a[n];
+    int a[n],in=0,de=0,ma,mi;
     for(int i=0;i<n;i++)
     {
         cin>>a[i];
     }
-    int ma=0,mi=0,maa=0,mii=0;
-    for(int i=0;i<n-1;i++)
+    ma=a[0];
+    mi=a[0];
+    for(int i=1;i<n;i++)
     {
-        if(a[i]>a[i+1])
+        if(a[i]>ma)
         {
-            mi++;
+            ma=a[i];
+            in++;
         }
-        if(a[i]<a[i+1])
+        if(a[i]<mi)
         {
-            ma++;
-            cout<<a[i+1]<<" ";
+            mi=a[i];
+            de++;
         }
     }
-    cout<<ma<<" "<<mi<<endl;
+    cout<<in<<" "<<de<<endl;
+
 }
