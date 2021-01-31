@@ -13,6 +13,7 @@ public:
         left =NULL;
         right=NULL;
     }
+
 };
 
 node *root = new node(1);
@@ -303,6 +304,8 @@ void lsp(node*tmp)
             }
         }
 }
+
+
 
 
 void print(node* tmp)
