@@ -33,6 +33,12 @@ void node:: print(node*tmp)
     return;
 }
 
+node(int val)
+{
+ data=val;
+ next=NULL;
+}
+
 int main()
 {
 
