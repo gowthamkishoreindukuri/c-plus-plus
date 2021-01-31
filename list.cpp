@@ -7,7 +7,7 @@ public:
     node* next;
     int length(node* tmp);
     void print(node* tmp);
-    void addatend(int val,node* tmp);
+    void addatend(int val,node tmp);
     void addatbegin(int val,node* tmp);
     node(int val);
 };
@@ -33,13 +33,35 @@ void node:: print(node*tmp)
     return;
 }
 
-node(int val)
+node::node(int val)
 {
  data=val;
  next=NULL;
 }
 
+void node::addatbegin(int val,node*tmp)
+{
+    node * nn = new node(val);
+    nn->next=tmp;
+    tmp=nn;
+    return;
+}
+
+void node::addatend(int val,node tmp)
+{
+    node*nn = new node(val);
+    node tp=tmp;
+    while(tp->next!=NULL)
+    {
+        tp=tp->next;
+    }
+    tp->next=nn;
+    return ;
+}
+
 int main()
 {
+    node root(1);
+    root.addatend(2,root);
 
 }
