@@ -9,21 +9,35 @@ int main()
     {
      cin>>a[i];
     }
-    sort(a,a+n);
     int ac=0,bc=0;
+    int i=0,j=n-1;
     int tmp=0;
-    for(int i=n-1;i>=0;i--)
+    while(i<=j)
     {
-        cout<<ac<<" "<<bc<<endl;
-        if(!tmp)
+        if(tmp==0)
         {
-            ac+=a[i];
+            if(a[i]>a[j])
+            {
+                ac+=a[i];
+                i++;
+            }
+            else{
+            ac+=a[j];
+            j--;
+            }
             tmp=1;
         }
-        else
-        {
+        else{
+            if(a[i]>a[j])
+            {
+                bc+=a[i];
+                i++;
+            }
+            else{
+            bc+=a[j];
+            j--;
+            }
             tmp=0;
-            bc+=a[i];
         }
     }
     cout<<ac<<" "<<bc<<endl;
